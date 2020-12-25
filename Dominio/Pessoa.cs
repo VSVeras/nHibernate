@@ -6,7 +6,7 @@ namespace Dominio
 
     public abstract class Pessoa
     {
-        public virtual int ID { get; set; }
+        public virtual int Id { get; set; }
         public virtual string Nome { get; set; }
         public virtual string Endereco { get; set; }
         public virtual string Cep { get; set; }

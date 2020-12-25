@@ -6,7 +6,7 @@ namespace Infraestrutura
     {
         public Pessoa()
         {
-            Id(x => x.ID).GeneratedBy.Identity();
+            Id(x => x.Id).GeneratedBy.Identity();
             Map(x => x.Nome).Not.Nullable().Length(255);
             Map(x => x.Endereco).Length(255);
             Map(x => x.Cep).Length(255);

@@ -9,7 +9,7 @@ namespace App
     {
         static void Main(string[] args)
         {
-            int ID;
+            int Id;
             var sessionFactory = Conexao.Criar();
 
             using (var session = sessionFactory.OpenSession())
@@ -95,7 +95,7 @@ namespace App
                     novaPf.AdicionarTelefone(new Dominio.Telefone() { CodigoDDD = 21, Numero = 654321 });
                     session.SaveOrUpdate(novaPf);
 
-                    ID = novaPf.ID;
+                    Id = novaPf.Id;
 
                     transaction.Commit();
 
