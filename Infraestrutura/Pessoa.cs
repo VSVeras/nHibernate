@@ -15,7 +15,7 @@ namespace Infraestrutura
             Map(x => x.Status).CustomType<int>();
             References(x => x.Departamento).Not.Nullable();
             HasManyToMany(x => x.Grupos);
-            HasMany(x => x.Telefones).Cascade.All();
+            HasMany(x => x.Telefones).LazyLoad().Cascade.All();
         }
     }
 }

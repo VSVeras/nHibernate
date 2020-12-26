@@ -103,15 +103,22 @@ namespace App
 
             }
 
-            //using (var session = sessionFactory.OpenSession())
-            //{
-            //    using (var transaction = session.BeginTransaction())
-            //    {
-            //        var pf = session.Get<Dominio.PessoaFisica>(ID);
-            //        session.Delete(pf);
-            //        transaction.Commit();
-            //    }
-            //}
+            using (var session = sessionFactory.OpenSession())
+            {
+                using (var transaction = session.BeginTransaction())
+                {
+                    var pf = session.Get<Dominio.PessoaFisica>(Id);
+                    Console.WriteLine(pf.Cpf);
+                    Console.WriteLine(pf.Nome);
+                    foreach (var telefone in pf.Telefones)
+                    {
+                        Console.WriteLine(telefone.Numero);
+                    }
+
+                    //session.Delete(pf);
+                    //transaction.Commit();
+                }
+            }
         }
     }
 }
